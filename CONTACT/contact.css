@@ -1,0 +1,539 @@
+/* ===================================
+   1. CUSTOM FONT FACE (UNCHANGED)
+=================================== */
+@font-face { 
+    font-family: 'Digitalt';
+    src: url('../Fonts/digitalt-font/Digitalt-04no.ttf') format('truetype'),
+         url('../Fonts/digitalt-font/Digitalt-nGZM.otf') format('opentype'); /* Adjusted path */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ===================================
+   2. RESET STYLES (UNCHANGED)
+=================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===================================
+   3. BASE BODY STYLES (UNCHANGED)
+=================================== */
+body {
+    font-family: Helvetica, sans-serif;
+    background-color: #1f1f1f;
+    color: #fff;
+}
+
+/* ===================================
+   4. NAVIGATION BAR (UNCHANGED)
+=================================== */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 10;
+    transition: top 0.3s;
+}
+
+.navbar .logo img {
+    width: 50px;
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin-left: 800px;
+    margin-right: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: #ffe500;
+    font-family: "Lacquer", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 1.5em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.nav-links a:hover {
+    color: #ffe60085;
+    text-decoration: none;
+}
+
+/* Mobile Menu Button (Hamburger Icon) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.menu-toggle span {
+    background-color: #ffe500; /* Line color */
+    height: 3px;               /* Line thickness */
+    width: 30px;               /* Line width */
+    margin: 3px 0;             /* Space between lines */
+    border-radius: 5px;        /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth animation */
+}
+
+/* Navbar Links (Default) */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    color: #ffe500;
+    text-decoration: none;
+    font-size: 1.5em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffe60085;
+}
+
+/* Mobile Menu (Dropdown) */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Show menu button on small screens */
+    }
+
+    .nav-links {
+        display: none; /* Hide links by default */
+        flex-direction: column;
+        position: absolute;
+        top: 65px; /* Positioned below the toggle icon */
+        right: 20px;
+        background-color: rgba(31, 31, 31, 0.9); /* Slight transparency */
+        padding: 10px 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show dropdown when active */
+    }
+
+    .nav-links a {
+        padding: 10px;
+        text-align: right;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    /* Animation for the hamburger icon when opened */
+    .menu-toggle.open span:nth-child(1) {
+        transform: rotate(45deg);
+        margin-top: 8px;
+    }
+
+    .menu-toggle.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.open span:nth-child(3) {
+        transform: rotate(-45deg);
+        margin-top: 8px;
+    }
+}
+
+/* ===================================
+   5. HERO SECTION (UNCHANGED)
+=================================== */
+.hero-section {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0) 70%,
+        #1f1f1f 100%
+    ), url('../Resources/Screenshot (9).png') center center/cover;
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content .main-heading {
+    width: 80%;
+    height: auto;
+    max-width: 400px;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.9));
+}
+
+@keyframes rotateScale {
+    0% {
+        transform: rotate(-30deg) scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: rotate(0deg) scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
+.hero-content h1 {
+    font-family: "Lacquer", system-ui;
+    color: #ffe500;
+    font-size: 5em;
+    letter-spacing: 10px;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 2;
+    animation: rotateScale 2s ease-out;
+}
+
+.about {
+    color: #ffffff; 
+}
+
+.us {
+    color: #ffe500; 
+}
+
+
+/* ===================================
+   6. SECTION STYLES (UNCHANGED)
+=================================== */
+section {
+    padding: 20px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-family: 'Digitalt', sans-serif;
+    letter-spacing: 5px;
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: 200;
+    font-style: normal;
+}
+
+/* ===================================
+   7. BAND MEMBERS (UNCHANGED)
+=================================== */
+.band-member {
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #1f1f1f, #333);
+    padding: 20px;
+    color: #fff;
+}
+
+.band-member img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* ===================================
+   8. PARAGRAPH STYLES (UNCHANGED)
+=================================== */
+p {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Footer Section */
+.site-footer {
+    background-color: #222;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    padding-bottom: 20px;
+}
+
+.footer-column {
+    background-color: #222;
+    padding: 10px;
+    min-width: 200px; /* Ensures columns stay readable on small screens */
+    text-align: center;
+}
+
+.footer-column h4 {
+    color: #ffffff;
+    font-family: 'Digitalt', sans-serif;
+    letter-spacing: 3px;
+    font-size: 1.5em;
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: 5px;
+}
+
+.footer-column a {
+    color: #ffe500;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+.footer-bottom {
+    background-color: #1f1f1f;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.9em;
+    color: #ffffff;
+    border-top: 1px solid #333;
+}
+
+.footer-bottom p {
+    margin-bottom: 5px;
+    margin-top: 0;
+    line-height: 1.2;
+}
+
+.footer-bottom a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    text-decoration: none;
+    color: #ffe500;
+}
+
+/* Responsive Footer for Tablets */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .footer-column {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        padding: 10px 0;
+    }
+}
+
+/* Responsive Footer for Mobile */
+@media (max-width: 480px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .footer-column {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .footer-bottom {
+        padding: 8px 0;
+        font-size: 0.8em;
+    }
+}
+
+/* ===================================
+   10. MEDIA QUERIES (UNCHANGED)
+=================================== */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .hero-content .main-heading {
+        width: 70%;
+        max-width: 350px;
+    }
+    section {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 60vh;
+    }
+    .hero-content .main-heading {
+        max-width: 250px;
+    }
+    section {
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 50vh;
+    }
+    .hero-content .main-heading {
+        max-width: 200px;
+    }
+    section {
+        padding: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 3em;      /* Further reduce size */
+        letter-spacing: 2px;
+}
+}
+/* ===================================
+   CONTACT DETAILS SECTION
+   (Image on the Left, Cards Stacked on the Right)
+=================================== */
+
+/* Wrapper for the entire contact details section */
+.contact-details-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #1f1f1f; /* Matches site background */
+}
+
+/* CONTACT */
+.heading-contact {
+    font-family: "Lacquer", system-ui;   /* Playful font */
+    font-size: 2.2em;                    /* Smaller size */
+    color: #ffe500;                      /* Yellow */
+    letter-spacing: 2px;
+    margin-bottom: 0.2em;
+}
+
+/* DETAILS */
+.heading-details {
+    font-family: 'Digitalt', sans-serif; /* Bold digital font */
+    font-size: 3em;                      /* Larger size */
+    color: #ffffff;                      /* White */
+    letter-spacing: 3px;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+.contact-details-section p {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+/* 
+   1. A flex container for the image (left) + cards (right).
+   2. We'll align items at the top (flex-start).
+   3. We add gap for spacing.
+*/
+.contact-content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+/* The left side: Image container */
+.contact-image img {
+    max-width: 43vw;  /* Adjust as desired */
+    width: 100%;
+    height: auto;
+}
+
+/* The right side: a vertical column for the cards */
+.contact-cards-column {
+    display: flex;
+    flex-direction: column;  /* Stack them vertically */
+    gap: 20px;               /* Spacing between cards */
+    flex: 1;                 /* Take up remaining horizontal space */
+    max-width: 400px;        /* Optional: limit card container width */
+}
+
+/* Reuse your existing card styles */
+.contact-card {
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.contact-card:hover {
+    background-color: #333;
+}
+
+.contact-card h3 {
+    font-size: 1.5em;
+    font-family: "Lacquer", system-ui;
+    margin-bottom: 15px;
+    color: #ffe500; /* Accent color */
+}
+
+.contact-card p {
+    color: #fff;
+    margin-bottom: 0;
+}
+
+/* Example media query to stack image above cards on narrow screens */
+@media (max-width: 768px) {
+    .contact-content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-image img {
+        max-width: 80%; /* Let the image shrink more on small screens */
+        margin-bottom: 20px;
+    }
+}

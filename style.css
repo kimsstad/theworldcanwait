@@ -1,0 +1,599 @@
+/* style.css */
+
+@font-face {
+    font-family: 'Digitalt';
+    src: url('Fonts/digitalt-font/Digitalt-04no.ttf') format('truetype'),
+         url('Fonts/digitalt-font/Digitalt-nGZM.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Helvetica, sans-serif;
+    background-color: #1f1f1f;
+    color: #fff;
+}
+
+
+h1, h2, h3 {
+    font-family: 'Digitalt', sans-serif;
+    letter-spacing: 5px; /* Adjust the value as needed */
+    font-size: 3em;
+    font-style: normal;
+    font-weight: 200;
+}
+
+
+/* Navigation Bar Styles */
+.navbar {
+    position: absolute; /* Fixed to keep it in place during scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 10;
+    transition: top 0.3s; /* Smooth transition for hiding/showing */
+}
+
+
+.navbar .logo img {
+    width: 50px; /* Adjust as needed */
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin-left: 800px;
+    margin-right:0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: #ffe500; /* Adjust to your preferred color */
+    font-family: "Lacquer", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 1.5em; /* Adjust as needed */
+    padding: 5px 10px; /* Add padding for better spacing */
+    border-radius: 5px; /* Optional: rounded corners for background */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow effect */
+}
+
+.nav-links a:hover {
+    /* background-color: #fff; Background color on hover */
+    color: #ffe60085; /* Text color on hover */
+    text-decoration: none;
+}
+
+.navbar .logo {
+    transition: transform 0.5s ease; /* Smooth rotation transition */
+    cursor: pointer; /* Indicate that the image is clickable */
+}
+
+.navbar .logo.rotate {
+    transform: rotate(360deg); /* Rotate the image 360 degrees */
+}
+
+
+/* Header Section with Hero Image */
+.hero-section {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0) 70%, /* Transparent part of the gradient */
+        #1f1f1f 100% /* Solid color or semi-transparent fade */
+    ), url('Resources/Screenshot (9).png') center center/cover;
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Black overlay with 50% opacity */
+    z-index: 1;
+}
+
+
+
+.main-heading {
+    width: 50%; /* Adjust this value to shrink or enlarge the image */
+    height: auto; /* Maintain the aspect ratio */
+    max-width: 300px; /* Set a maximum width to prevent the image from getting too large */
+    position: relative; /* Ensures the image appears above the overlay */
+    z-index: 2;
+    filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.9));
+}
+
+.hero-content .main-heading {
+    width: 80%; /* Increase this value to make the image larger */
+    height: auto; /* Maintain the aspect ratio */
+    max-width: 400px; /* Adjust this value to control the maximum size */
+}
+
+.hero-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.platform-links a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.new-releases {
+    padding: 20px 20px;
+    text-align: center;    
+}
+.spotify-section, .merchandise-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.new-releases h2, .spotify-section h2, .merchandise-section h2 {
+    font-family: "Lacquer", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5em;
+    color: #ffe500;
+}
+
+.release-cards, .merch-cards {
+    display: flex; /* Allows items to wrap to the next line if needed */
+    justify-content: space-around; /* Evenly spaces items with equal space around them */
+    gap: 20px; /* Optional: Adds space between the items */
+    padding: 20px; /* Optional: Adds padding around the container */
+}
+
+.release-card, .merch-card {
+    flex: 1 1 200px; /* Flex-grow, flex-shrink, and flex-basis */
+    max-width: 200px; /* Optional: Limits the maximum width of each item */
+    text-align: center;
+    max-width: 300px;
+}
+
+.merch-card img {
+width: 100%; /* Ensures the image takes the full width of the card */
+height: auto; /* Maintains the aspect ratio */
+}
+
+
+/* Platform Links Styles */
+.platform-links {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping if space runs out */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.platform-links a img {
+    width: 40px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Optional: Add a smooth hover effect */
+}
+
+.platform-links a img:hover {
+    transform: scale(1.1); /* Slightly enlarge logo on hover */
+}
+
+/* WIDE IMAGE SECTION */
+.full-width-image-1, .full-width-image-2 {
+    width: 100%;
+    overflow: hidden; /* Ensures no overflow */
+}
+
+.full-width-image-1 img, .full-width-image-2 img {
+    width: 100%; /* Make the image take up the full width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Removes extra space below the image */
+}
+
+/* Ensure they stay in a row on smaller screens */
+@media (max-width: 768px) {
+    .platform-links {
+        flex-direction: row; /* Keep them in a row */
+        flex-wrap: wrap; /* Wrap if necessary */
+        gap: 8px; /* Smaller gap on mobile */
+    }
+
+    .platform-links a img {
+        width: 30px; /* Slightly smaller icons for small screens */
+    }
+}
+
+
+/* NEW RELEASE SECTION */
+
+.release-cards {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping of items on smaller screens */
+    justify-content: center; /* Centers the items horizontally */
+    gap: 20px; /* Space between items */
+    margin: 0 auto; /* Center the container itself */
+    max-width: 1200px; /* Optional: Set a maximum width */
+}
+
+.release-card {
+    flex: 1 1 300px; /* Allows items to grow and shrink, and sets a base width */
+    text-align: center;
+    max-width: 300px; /* Maximum width for each card */
+}
+
+.release-card img {
+    width: 100%; /* Ensure the image takes up the full width of its container */
+    height: auto; /* Maintain the aspect ratio of the image */
+    max-width: 250px; /* Set a maximum width for the image */
+    max-height: 250px; /* Set a maximum height for the image */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.buy-links a {
+    color: #fff; /* Change this to your preferred color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1em; /* Adjust font size if needed */
+    padding: 5px; /* Optional: add padding for spacing */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.buy-links a:hover {
+    color: #ffe500; /* Optional: Change color on hover */
+    text-decoration: none; /* Ensure text decoration remains none on hover */
+}
+
+/* Adjust spacing for paragraphs */
+/* Adjust spacing between h2 and h3 headings */
+h2 {
+    margin-bottom: 5px; /* Reduce space below h2 */
+}
+
+h3 {
+    margin-top: 5px; /* Reduce space above h3 */
+}
+
+p {
+    margin-top: 20px;
+    margin-bottom: 30px; /* Add space below paragraphs */
+    line-height: 1.6; /* Optional: Adjust the line height for readability */
+}
+
+/* Footer Section */
+.site-footer {
+    background-color: #222;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+}
+
+.footer-bottom {
+    background-color: #1f1f1f;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.footer-column {
+    background-color: #222;
+}
+
+.footer-column h4 {
+    color: #ffffff;
+    font-family: 'Digitalt', sans-serif;
+    letter-spacing: 3px;
+    font-size: 1.5em;
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: 5px;
+}
+
+.footer-column a {
+    color: #ffe500;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center; /* Centers the content */
+    padding: 15px 0; /* Adds vertical spacing */
+    font-size: 0.9em; /* Adjusts font size */
+    color: #ffffff; /* Sets text color */
+    background-color: #222; /* Footer background color */
+    border-top: 1px solid #333; /* Optional top border for separation */
+}
+
+.footer-bottom p {
+    margin-bottom: 5px; /* Reduce space between the two lines */
+    margin-top: 0;
+    line-height: 1.2;   /* Optional: Tighten line spacing */
+}
+
+.footer-bottom a {
+    text-decoration: none; /* Removes underline */
+    color: #ffffff; /* Sets the link color */
+    font-weight: bold; /* Makes the text stand out */
+}
+
+.footer-bottom a:hover {
+    text-decoration: none; /* Ensures no underline on hover */
+    color: #ffe500; /* Optional: Slightly darker color on hover */
+}
+
+/* Media Queries */
+
+/* Laptops (Screen width: 1024px - 1366px) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .navbar {
+        padding: 15px 30px;
+    }
+
+    .nav-links {
+        margin-left: 0; /* Remove extra margin */
+        gap: 30px; /* Adjust gap for better spacing */
+    }
+
+    .hero-content .main-heading {
+        width: 70%; /* Adjust width for laptops */
+        max-width: 350px; /* Increase max-width slightly */
+    }
+
+    .release-cards, .merch-cards {
+        gap: 30px; /* Increase gap for better spacing */
+    }
+
+    .release-card, .merch-card {
+        flex: 1 1 250px; /* Adjust base width for better fit */
+        max-width: 250px; /* Increase max-width */
+    }
+
+    .release-card img {
+        max-width: 300px; /* Increase max-width */
+        max-height: 300px; /* Increase max-height */
+    }
+
+    .spotify-section iframe {
+        height: 400px; /* Increase height for larger screens */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Stack footer columns vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .footer-column {
+        margin-bottom: 20px; /* Add spacing between columns */
+    }
+
+    .footer-bottom {
+        padding-top: 10px; /* Adjust padding */
+    }
+}
+
+/* For tablets and smaller devices */
+@media (max-width: 768px) {
+    .navbar .logo img {
+        width: 40px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .hero-section {
+        height: 60vh;
+    }
+
+    .main-heading {
+        max-width: 250px;
+    }
+
+    .platform-links a img {
+        width: 30px;
+    }
+
+    .release-card, .merch-card {
+        flex: 1 1 150px;
+    }
+
+    .release-card img, .merch-card img {
+        max-width: 200px;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero-section {
+        height: 50vh;
+    }
+
+    .main-heading {
+        max-width: 200px;
+    }
+
+    .platform-links {
+        flex-direction: row;
+    }
+
+    .platform-links a img {
+        width: 25px;
+        margin-bottom: 10px;
+    }
+
+    .release-card, .merch-card {
+        flex: 1 1 100%;
+    }
+
+    .release-card img, .merch-card img {
+        max-width: 150px;
+    }
+}
+
+/* Mobile Menu Button */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px; /* Top-right corner */
+    z-index: 1000;
+}
+
+.menu-toggle span {
+    background-color: #ffe500;
+    height: 3px; /* Same thickness */
+    width: 30px;
+    margin: 2.5px 0;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Positioned below the menu icon */
+        right: 15px; /* Align to the right */
+        background-color:rgba(31, 31, 31, 0.9);
+        padding: 10px 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+        text-align: right;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 10px;
+        width: 100%; 
+        text-align: right;
+        border-bottom: 1px solid #333; 
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none; /* Remove border for the last item */
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    .menu-toggle span {
+        background-color: #ffe500;
+        height: 3px;
+        width: 30px;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+    }
+
+    .menu-toggle.open span:nth-child(1) {
+        transform: rotate(45deg);
+        margin-top: 8px;
+    }
+
+    .menu-toggle.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.open span:nth-child(3) {
+        transform: rotate(-45deg);
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack footer columns vertically */
+        align-items: center; /* Center items horizontally */
+        padding: 10px; /* Adjust padding for better spacing */
+    }
+
+    .footer-column {
+        margin-bottom: 20px; /* Add spacing between columns */
+        text-align: center; /* Center text in each column */
+    }
+
+    .footer-bottom {
+        padding: 10px 0; /* Adjust padding */
+    }
+}
