@@ -1,130 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events - The World Can Wait</title>
-    <link rel="stylesheet" href="../EVENTS/events.css"> <!-- Updated path -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="16x16" href="../Resources/favicon.png"> <!-- Updated path -->
-    <script src="../script.js" defer></script> <!-- Updated path -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | The World Can Wait</title>
+  <meta name="description" content="See upcoming live shows and booking information for The World Can Wait.">
+  <link rel="icon" type="image/png" href="../Resources/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="events.css">
+  <script src="../script.js" defer></script>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="../index.html">
-        <img src="../Resources/150x150 smiley skull new.png" src="" alt="Logo" class="logo" style="width: 50px; height: auto;">
-    </a>
-    <ul class="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../ABOUT PAGE/about.html">About</a></li>
-        <li><a href="../EVENTS/events.html">Events</a></li>
-        <li><a href="../VIDEOS/videos.html">Videos</a></li>
-        <li><a href="../CONTACT/contact.html">Contact</a></li>
-        
-    </ul>
-    <div class="menu-toggle" onclick="toggleMenu()">
+  <nav class="site-nav" data-nav>
+    <div class="nav-shell">
+      <a class="brand" href="../index.html" aria-label="The World Can Wait home">
+        <img src="../Resources/150x150 smiley skull new.png" alt="The World Can Wait logo">
+      </a>
+      <div class="nav-links" data-nav-links>
+        <a href="../ABOUT PAGE/about.html">About</a>
+        <a href="events.html">Events</a>
+        <a href="../CONTACT/contact.html">Contact</a>
+        <a class="nav-cta" href="../index.html#platforms">Listen Now</a>
+      </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+        <span class="sr-only">Toggle navigation</span>
         <span></span>
         <span></span>
         <span></span>
+      </button>
     </div>
-</nav>
-    <header class="navbar">
-        <!-- Navigation bar content -->
-    </header>
-    
-    <section class="hero-section">
-    
-        <div class="hero-content">
-        
-            <h1><span class="about">UPCOMING</span>
-                <span class="us">EVENTS</span></h1>
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+      <a href="../ABOUT PAGE/about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="../CONTACT/contact.html">Contact</a>
+      <a class="mobile-menu-cta" href="../index.html#platforms">Listen Now</a>
+    </div>
+  </nav>
+
+  <main class="events-page">
+    <section class="events-section noise-surface" id="events">
+      <div class="events-screen-glow" aria-hidden="true"></div>
+      <div class="events-stage-glow" aria-hidden="true"></div>
+
+      <div class="section-shell">
+        <div class="events-heading reveal">
+          <h1>Live Shows</h1>
         </div>
+
+        <div class="events-list">
+          <article class="event-row reveal" style="transition-delay: 0ms;">
+            <div class="event-main">
+              <div class="event-date-block">
+                <span class="event-date-main">Aug 12</span>
+                <span class="event-date-year">2026</span>
+              </div>
+
+              <div class="event-details">
+                <h2>SKW Main Hall</h2>
+                <div class="event-meta">
+                  <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                      <path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z"></path>
+                      <circle cx="12" cy="10" r="2.5"></circle>
+                    </svg>
+                    Windhoek
+                  </span>
+                  <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                      <circle cx="12" cy="12" r="9"></circle>
+                      <path d="M12 7v6l4 2"></path>
+                    </svg>
+                    20:00
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="event-action">
+              <a href="https://www.instagram.com/worldcwait/" class="event-button" target="_blank" rel="noopener noreferrer">Tickets</a>
+            </div>
+          </article>
+
+          <article class="event-row reveal" style="transition-delay: 100ms;">
+            <div class="event-main">
+              <div class="event-date-block">
+                <span class="event-date-main">Sep 05</span>
+                <span class="event-date-year">2026</span>
+              </div>
+
+              <div class="event-details">
+                <h2>Desert Tavern</h2>
+                <div class="event-meta">
+                  <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                      <path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z"></path>
+                      <circle cx="12" cy="10" r="2.5"></circle>
+                    </svg>
+                    Swakopmund
+                  </span>
+                  <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                      <circle cx="12" cy="12" r="9"></circle>
+                      <path d="M12 7v6l4 2"></path>
+                    </svg>
+                    19:30
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="event-action">
+              <a href="https://www.instagram.com/worldcwait/" class="event-button" target="_blank" rel="noopener noreferrer">Tickets</a>
+            </div>
+          </article>
+
+          <article class="event-row reveal" style="transition-delay: 200ms;">
+            <div class="event-main">
+              <div class="event-date-block">
+                <span class="event-date-main">Oct 18</span>
+                <span class="event-date-year">2026</span>
+              </div>
+
+              <div class="event-details">
+                <h2>The Warehouse Theatre</h2>
+                <div class="event-meta">
+                  <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                      <path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z"></path>
+                      <circle cx="12" cy="10" r="2.5"></circle>
+                    </svg>
+                    Windhoek
+                  </span>
+                  <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                      <circle cx="12" cy="12" r="9"></circle>
+                      <path d="M12 7v6l4 2"></path>
+                    </svg>
+                    21:00
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="event-action">
+              <a href="https://www.instagram.com/worldcwait/" class="event-button" target="_blank" rel="noopener noreferrer">Tickets</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="events-booking reveal">
+          <a href="../CONTACT/contact.html">Book The Band</a>
+        </div>
+      </div>
     </section>
-    
-    <!-- Funny Placeholder Events Section -->
-<!-- Funny Placeholder Events Section -->
-<section class="events-container">
-    <h2 class="heading-events">UPCOMING</h2>
-    <h3 class="heading-shows">SHOWS (SORT OF...)</h3>
-</section>
+  </main>
 
-    <div class="events-grid">
-        
-        <!-- Event Card 1 -->
-        <div class="event-item">
-            <div class="event-image">
-                <!-- Funny placeholder image -->
-                <img src="../Resources/bandpic1.JPG" alt="Placeholder Event">
-            </div>
-            <div class="event-details">
-                <h3>The Great Guitar-Tuning Extravaganza</h3>
-                <p><strong>Date:</strong> Jan 32, 2025</p>
-                <p><strong>Location:</strong> Our Drummer’s Basement</p>
-                <a href="#" class="btn-tickets">Grab Imaginary Tickets</a>
-            </div>
+  <footer class="site-footer">
+    <div class="footer-shell">
+      <div class="footer-grid">
+        <div class="footer-brand reveal">
+          <img src="../Resources/150x150 smiley skull new.png" alt="The World Can Wait logo">
+          <div>
+            <h3>The World Can Wait</h3>
+            <p>Raw Namibian Punk Rock</p>
+          </div>
         </div>
-
-        <!-- Event Card 2 -->
-        <div class="event-item">
-            <div class="event-image">
-                <!-- Funny placeholder image -->
-                <img src="../Resources/chris2.jpeg" alt="Totally Real Event 2">
-            </div>
-            <div class="event-details">
-                <h3>Midnight Moo-sic Jam</h3>
-                <p><strong>Date:</strong> Feb 30, 2025</p>
-                <p><strong>Location:</strong> Cow Pasture in the Middle of Nowhere</p>
-                <a href="#" class="btn-tickets">Book Your Barn</a>
-            </div>
+        <div class="footer-block reveal">
+          <h4>Hit Us Up</h4>
+          <a href="mailto:booking@theworldcanwait.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6h16v12H4z"></path><path d="m4 8 8 6 8-6"></path></svg>booking@theworldcanwait.com</a>
+          <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Windhoek, Namibia</p>
         </div>
-
-        <!-- Event Card 3 -->
-        <div class="event-item">
-            <div class="event-image">
-                <!-- Funny placeholder image -->
-                <img src="../Resources/bandpic2.JPG" alt="Totally Real Event 3">
-            </div>
-            <div class="event-details">
-                <h3>April Fools Acoustic Racket</h3>
-                <p><strong>Date:</strong> Apr 1, 2025</p>
-                <p><strong>Location:</strong> Jacky’s Living Room</p>
-                <a href="#" class="btn-tickets">“Tickets” Available</a>
-            </div>
+        <div class="footer-block reveal">
+          <h4>The Network</h4>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/worldcwait/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg></a>
+            <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.8 8.2a2.8 2.8 0 0 0-2-2c-1.7-.4-7.8-.4-7.8-.4s-6.1 0-7.8.4a2.8 2.8 0 0 0-2 2C1.8 9.9 1.8 12 1.8 12s0 2.1.4 3.8a2.8 2.8 0 0 0 2 2c1.7.4 7.8.4 7.8.4s6.1 0 7.8-.4a2.8 2.8 0 0 0 2-2c.4-1.7.4-3.8.4-3.8s0-2.1-.4-3.8ZM10 15.4V8.6l5.6 3.4-5.6 3.4Z"></path></svg></a>
+          </div>
+          <a class="footer-link" href="../CONTACT/contact.html">Open Contact Form</a>
         </div>
-
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-year></span> The World Can Wait. All rights reserved.</p>
+        <p>Built for the pit.</p>
+      </div>
     </div>
-</section>
-
-    
-
-    <!-- Footer Section -->
-    <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>Bookings</h4>
-                <p>Email: booking@theworldcanwait.com</p>
-            </div>
-            <div class="footer-column">
-                <h4>Instagram</h4>
-                <p>Latest Posts from @theworldcwait</p>
-            </div>
-            <div class="footer-column">
-                <h4>Upcoming Events</h4>
-                <ul>
-                    <li>-</li>
-                    <li>-</li>
-                    <li>-</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 The World Can Wait. All rights reserved.</p>
-            <p>Website built by <a href="https://papermooncreatives.com" target="_blank" rel="noopener">PAPERMOON Technical Creatives</a></p>
-        </div>
-    </footer>  
+  </footer>
 </body>
 </html>
-

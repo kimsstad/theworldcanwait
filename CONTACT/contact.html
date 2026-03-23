@@ -1,134 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - The World Can Wait</title>
-    
-    <!-- Link to your external CSS (contact.css) -->
-    <link rel="stylesheet" href="../CONTACT/contact.css"> <!-- Adjust path as needed -->
-
-    <!-- Fonts & Favicon -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="16x16" href="../Resources/favicon.png"> <!-- Adjust path if needed -->
-
-    <!-- JS -->
-    <script src="../script.js" defer></script> <!-- Adjust path if needed -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | The World Can Wait</title>
+  <meta name="description" content="Bookings, press, and general contact for The World Can Wait.">
+  <link rel="icon" type="image/png" href="../Resources/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="contact.css">
+  <script src="../script.js" defer></script>
+  <script src="contact.js" defer></script>
 </head>
 <body>
+  <nav class="site-nav" data-nav>
+    <div class="nav-shell">
+      <a class="brand" href="../index.html" aria-label="The World Can Wait home">
+        <img src="../Resources/150x150 smiley skull new.png" alt="The World Can Wait logo">
+      </a>
+      <div class="nav-links" data-nav-links>
+        <a href="../ABOUT PAGE/about.html">About</a>
+        <a href="../EVENTS/events.html">Events</a>
+        <a href="contact.html">Contact</a>
+        <a class="nav-cta" href="../index.html#platforms">Listen Now</a>
+      </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+        <span class="sr-only">Toggle navigation</span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+      <a href="../ABOUT PAGE/about.html">About</a>
+      <a href="../EVENTS/events.html">Events</a>
+      <a href="contact.html">Contact</a>
+      <a class="mobile-menu-cta" href="../index.html#platforms">Listen Now</a>
+    </div>
+  </nav>
 
-    <!-- =======================
-         1. NAVIGATION (UNCHANGED)
-    ======================== -->
-    <nav class="navbar">
-        <a href="../index.html">
-            <img src="../Resources/150x150 smiley skull new.png" alt="Logo" class="logo" style="width: 50px; height: auto;">
-        </a>
-        <ul class="nav-links">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../ABOUT PAGE/about.html">About</a></li>
-            <li><a href="../EVENTS/events.html">Events</a></li>
-            <li><a href="../VIDEOS/videos.html">Videos</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+  <main class="contact-page">
+    <section class="contact-section noise-surface">
+      <div class="contact-background" aria-hidden="true">
+        <img src="../Resources/topography/topography.svg" alt="">
+        <div class="contact-background-fade"></div>
+      </div>
 
-    <header class="navbar">
-        <!-- Navigation bar content (UNCHANGED) -->
-    </header>
-    
-    <!-- =======================
-         2. HERO SECTION (UNCHANGED)
-    ======================== -->
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1>
-                <span class="about">CONTACT</span>
-                <span class="us">US</span>
-            </h1>
+      <div class="section-shell contact-shell">
+        <div class="contact-intro reveal is-visible">
+          <h1>Get In Touch</h1>
+          <p>Bookings, press, hate mail, drop it all here. We'll get back to you when we're done making noise.</p>
         </div>
+
+        <div class="contact-grid">
+          <section class="contact-info reveal" aria-label="Contact details">
+            <div class="contact-panel">
+              <div class="contact-panel-accent"></div>
+              <h2>Direct Line</h2>
+
+              <div class="contact-list">
+                <a class="contact-item" href="mailto:booking@theworldcanwait.com">
+                  <span class="contact-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                      <path d="M4 6h16v12H4z"></path>
+                      <path d="m4 8 8 6 8-6"></path>
+                    </svg>
+                  </span>
+                  <span class="contact-copy">
+                    <span class="contact-label">Booking &amp; Press</span>
+                    <span class="contact-value">booking@theworldcanwait.com</span>
+                  </span>
+                </a>
+
+                <div class="contact-item">
+                  <span class="contact-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                      <path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z"></path>
+                      <circle cx="12" cy="10" r="2.5"></circle>
+                    </svg>
+                  </span>
+                  <span class="contact-copy">
+                    <span class="contact-label">Base Of Operations</span>
+                    <span class="contact-value">Windhoek, Namibia</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-panel">
+              <div class="contact-panel-accent delayed"></div>
+              <h2>Connect</h2>
+
+              <div class="contact-socials">
+                <a href="https://www.instagram.com/worldcwait/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <circle cx="17.5" cy="6.5" r="1"></circle>
+                  </svg>
+                </a>
+                <a href="#" aria-label="YouTube">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M21.8 8.2a2.8 2.8 0 0 0-2-2c-1.7-.4-7.8-.4-7.8-.4s-6.1 0-7.8.4a2.8 2.8 0 0 0-2 2C1.8 9.9 1.8 12 1.8 12s0 2.1.4 3.8a2.8 2.8 0 0 0 2 2c1.7.4 7.8.4 7.8.4s6.1 0 7.8-.4a2.8 2.8 0 0 0 2-2c.4-1.7.4-3.8.4-3.8s0-2.1-.4-3.8ZM10 15.4V8.6l5.6 3.4-5.6 3.4Z"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <section class="contact-form-wrap reveal" aria-label="Contact form">
+            <form class="contact-form" data-contact-form>
+              <div class="contact-row">
+                <label class="field">
+                  <span>Name</span>
+                  <input type="text" name="name" placeholder="John Doe">
+                </label>
+
+                <label class="field">
+                  <span>Email</span>
+                  <input type="email" name="email" placeholder="john@example.com">
+                </label>
+              </div>
+
+              <label class="field">
+                <span>Subject</span>
+                <select name="subject">
+                  <option value="booking">Booking / Live Shows</option>
+                  <option value="press">Press / Media</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="other">Other</option>
+                </select>
+              </label>
+
+              <label class="field field-message">
+                <span>Message</span>
+                <textarea name="message" rows="6" placeholder="Tell us what you want..."></textarea>
+              </label>
+
+              <button class="contact-submit" type="submit">
+                Send Message
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <path d="M22 2 11 13"></path>
+                  <path d="m22 2-7 20-4-9-9-4Z"></path>
+                </svg>
+              </button>
+            </form>
+          </section>
+        </div>
+      </div>
     </section>
-    
-<!-- =======================
-     4. NEW CONTACT DETAILS SECTION
-======================== -->
-<section class="contact-details-section">
-    <h2 class="heading-contact">GET</h2>
-    <h3 class="heading-details">IN TOUCH</h3>
-    <p>
-        For bookings, inquiries, or just to say hi, check out our details below.
-    </p>
+  </main>
 
-    <!-- NEW WRAPPER for image (left) + cards (right) -->
-    <div class="contact-content-wrapper">
-        
-        <!-- Left side: Image -->
-        <div class="contact-image">
-            <!-- Update the src to your desired image -->
-            <img src="../Resources/Dad1.jpg" alt="Contact Us" />
+  <footer class="site-footer">
+    <div class="footer-shell">
+      <div class="footer-grid">
+        <div class="footer-brand reveal">
+          <img src="../Resources/150x150 smiley skull new.png" alt="The World Can Wait logo">
+          <div>
+            <h3>The World Can Wait</h3>
+            <p>Raw Namibian Punk Rock</p>
+          </div>
         </div>
-        
-        <!-- Right side: Cards stacked vertically -->
-        <div class="contact-cards-column">
-            <!-- Card 1: Email -->
-            <div class="contact-card">
-                <h3>Email</h3>
-                <p>info@theworldcanwait.com</p>
-            </div>
-            
-            <!-- Card 2: Phone -->
-            <div class="contact-card">
-                <h3>Phone</h3>
-                <p>+264 (81) 123-4567</p>
-            </div>
-            
-            <!-- Card 3: Instagram -->
-            <div class="contact-card">
-                <h3>Instagram</h3>
-                <p>@theworldcwait</p>
-            </div>
+        <div class="footer-block reveal">
+          <h4>Hit Us Up</h4>
+          <a href="mailto:booking@theworldcanwait.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6h16v12H4z"></path><path d="m4 8 8 6 8-6"></path></svg>booking@theworldcanwait.com</a>
+          <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Windhoek, Namibia</p>
         </div>
-        
-    </div> <!-- .contact-content-wrapper -->
-</section>
-
-
-<!-- Footer Section -->
-<footer class="site-footer">
-    <div class="footer-content">
-        <div class="footer-column">
-            <h4>Bookings</h4>
-            <p>Email: booking@theworldcanwait.com</p>
+        <div class="footer-block reveal">
+          <h4>The Network</h4>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/worldcwait/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg></a>
+            <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.8 8.2a2.8 2.8 0 0 0-2-2c-1.7-.4-7.8-.4-7.8-.4s-6.1 0-7.8.4a2.8 2.8 0 0 0-2 2C1.8 9.9 1.8 12 1.8 12s0 2.1.4 3.8a2.8 2.8 0 0 0 2 2c1.7.4 7.8.4 7.8.4s6.1 0 7.8-.4a2.8 2.8 0 0 0 2-2c.4-1.7.4-3.8.4-3.8s0-2.1-.4-3.8ZM10 15.4V8.6l5.6 3.4-5.6 3.4Z"></path></svg></a>
+          </div>
+          <a class="footer-link" href="contact.html">Open Contact Form</a>
         </div>
-        <div class="footer-column">
-            <h4>Instagram</h4>
-            <p>Latest Posts from @theworldcwait</p>
-        </div>
-        <div class="footer-column">
-            <h4>Upcoming Events</h4>
-            <ul>
-                <li>-</li>
-                <li>-</li>
-                <li>-</li>
-            </ul>
-        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-year></span> The World Can Wait. All rights reserved.</p>
+        <p>Built for the pit.</p>
+      </div>
     </div>
-    <div class="footer-bottom">
-        <p>&copy; 2024 The World Can Wait. All rights reserved.</p>
-        <p>Website built by <a href="https://papermooncreatives.com" target="_blank" rel="noopener">PAPERMOON Technical Creatives</a></p>
-    </div>
-</footer>
-
-
-</body>
-</html>
+  </footer>
 </body>
 </html>

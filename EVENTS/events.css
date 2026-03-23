@@ -1,499 +1,285 @@
-@font-face {
-    font-family: 'Digitalt';
-    src: url('../Fonts/digitalt-font/Digitalt-04no.ttf') format('truetype'),
-         url('../Fonts/digitalt-font/Digitalt-nGZM.otf') format('opentype'); /* Adjusted path */
-    font-weight: normal;
-    font-style: normal;
+.events-page {
+  padding-top: 5rem;
+  min-height: 100vh;
+  background: #050505;
 }
 
-/* Reset some default browser styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.events-section {
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 0 7rem;
+  background: #050505;
+  color: #ffffff;
 }
 
-body {
-    font-family: Helvetica, sans-serif;
-    background-color: #1f1f1f;
-    color: #fff;
+.events-screen-glow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to bottom, #111111, transparent);
+  opacity: 0.5;
+  mix-blend-mode: screen;
+  pointer-events: none;
 }
 
-/* Navigation Bar Styles */
-.navbar {
-    position: absolute; /* Fixed to keep it in place during scrolling */
-    top: 0;
-    left: 0;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    z-index: 10;
-    transition: top 0.3s; /* Smooth transition for hiding/showing */
+.events-stage-glow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 25rem;
+  height: 25rem;
+  border-radius: 999px;
+  background: rgba(255, 229, 0, 0.05);
+  filter: blur(120px);
+  pointer-events: none;
 }
 
-
-.navbar .logo img {
-    width: 50px; /* Adjust as needed */
-    height: auto;
+.events-heading {
+  margin-bottom: 4rem;
+  border-left: 4px solid #ffe500;
+  padding-left: 1.5rem;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-    margin-left: 800px;
-    margin-right:0;
+.events-heading h1 {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Teko", sans-serif;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
 }
 
-.nav-links li {
-    display: inline;
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.nav-links a {
-    color: #ffe500; /* Adjust to your preferred color */
-    font-family: "Lacquer", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    text-decoration: none;
-    font-size: 1.5em; /* Adjust as needed */
-    padding: 5px 10px; /* Add padding for better spacing */
-    border-radius: 5px; /* Optional: rounded corners for background */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow effect */
+.event-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  margin-inline: -1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  transition: background-color 220ms ease, transform 220ms ease;
 }
 
-.nav-links a:hover {
-    /* background-color: #fff; Background color on hover */
-    color: #ffe60085; /* Text color on hover */
-    text-decoration: none;
+.event-row:hover {
+  background: rgba(255, 255, 255, 0.05);
 }
 
-/* Mobile Menu Button (Hamburger Icon) */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    z-index: 1000;
+.event-main {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
 }
 
-.menu-toggle span {
-    background-color: #ffe500; /* Line color */
-    height: 3px;               /* Line thickness */
-    width: 30px;               /* Line width */
-    margin: 3px 0;             /* Space between lines */
-    border-radius: 5px;        /* Rounded corners */
-    transition: all 0.3s ease; /* Smooth animation */
+.event-date-block {
+  display: flex;
+  flex-direction: column;
+  min-width: 9rem;
 }
 
-/* Navbar Links (Default) */
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 40px;
+.event-date-main {
+  color: #ffe500;
+  font-family: "Teko", sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-.nav-links a {
-    color: #ffe500;
-    text-decoration: none;
-    font-size: 1.5em;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
+.event-date-year {
+  color: #9ca3af;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-.nav-links a:hover {
-    color: #ffe60085;
-}
-
-/* Mobile Menu (Dropdown) */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: flex; /* Show menu button on small screens */
-    }
-
-    .nav-links {
-        display: none; /* Hide links by default */
-        flex-direction: column;
-        position: absolute;
-        top: 65px; /* Positioned below the toggle icon */
-        right: 20px;
-        background-color: rgba(31, 31, 31, 0.9); /* Slight transparency */
-        padding: 10px 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        z-index: 999;
-    }
-
-    .nav-links.active {
-        display: flex; /* Show dropdown when active */
-    }
-
-    .nav-links a {
-        padding: 10px;
-        text-align: right;
-        width: 100%;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .nav-links a:last-child {
-        border-bottom: none;
-    }
-
-    /* Animation for the hamburger icon when opened */
-    .menu-toggle.open span:nth-child(1) {
-        transform: rotate(45deg);
-        margin-top: 8px;
-    }
-
-    .menu-toggle.open span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle.open span:nth-child(3) {
-        transform: rotate(-45deg);
-        margin-top: 8px;
-    }
-}
-
-
-/* Header Section with Hero Image */
-.hero-section {
-    background: linear-gradient(
-        rgba(0, 0, 0, 0) 70%, /* Transparent part of the gradient */
-        #1f1f1f 100% /* Solid color or semi-transparent fade */
-    ), url('../Resources/Screenshot (9).png') center center/cover; /* Adjusted path */
-    height: 80vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-}
-
-.hero-content .main-heading {
-    width: 80%;
-    height: auto;
-    max-width: 400px;
-    position: relative;
-    z-index: 2;
-    filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.9));
-}
-
-@keyframes rotateScale {
-    0% {
-        transform: rotate(-30deg) scale(0.5);
-        opacity: 0;
-    }
-    50% {
-        transform: rotate(0deg) scale(1.1);
-        opacity: 1;
-    }
-    100% {
-        transform: rotate(0deg) scale(1);
-        opacity: 1;
-    }
-}
-
-.hero-content h1 {
-    font-family: "Lacquer", system-ui;
-    color: #ffe500;
-    font-size: 5em;
-    letter-spacing: 10px;
-    margin-bottom: 20px;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
-    position: relative; /* Ensure the element is positioned */
-    z-index: 2; /* Ensure it's above other content */
-    animation: rotateScale 2s ease-out;
-}   
-
-.about {
-    color: #ffffff; /* White color for "ABOUT" */
-    
-}
-
-.us {
-    color: #ffe500; /* Yellow color for "US" */
-}
-
-/* ===== Events Section Additions ===== */
-
-/* Container for the entire events section */
-.events-container {
-    padding: 20px;
-    text-align: center; /* Keeps headings and text centered */
-}
-
-/* Headline for the events */
-
-
-/* OUR UPCOMING */
-.heading-events {
-    font-family: "Lacquer", system-ui;    /* Bold and playful */
-    font-size: 2.2em;                     /* Smaller size */
-    color: #ffe500;                       /* Yellow */
-    letter-spacing: 2px;
-    margin-bottom: 0.2em;
-}
-
-/* SHOWS (SORT OF...) */
-.heading-shows {
-    font-family: 'Digitalt', sans-serif;  /* Futuristic/digital vibe */
-    font-size: 3em;                       /* Larger size */
-    color: #ffffff;                       /* White */
-    letter-spacing: 3px;
-    margin-top: 0;
-    margin-bottom: 1em;
-}
-
-/* Grid to display event cards responsively */
-.events-grid {
-    display: grid;
-    gap: 20px;
-    /* 
-     Use auto-fit or auto-fill + minmax for a fully fluid grid 
-     that adapts to any screen size
-    */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    align-items: start;
-}
-
-/* Individual event card container */
-.event-item {
-    background-color: #333; 
-    padding: 20px;
-    border-radius: 8px;
-    text-align: left; /* Align text left inside cards if preferred */
-}
-
-/* Image container styling */
-.event-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    display: block;
-}
-
-/* Event details styling */
 .event-details {
-    margin-top: 15px;
-    color: #fff; /* Ensure text contrasts with dark background */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.event-details h3 {
-    font-family: "Lacquer", system-ui;
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #ffe500; /* Optional highlight for event title */
+.event-details h2 {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Teko", sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  transition: color 220ms ease;
 }
 
-/* Ticket/More Info Button - Updated */
-
-.btn-tickets {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 12px 24px;
-    background-color: transparent;       /* Transparent background for a modern look */
-    color: #ffe500;                      /* Yellow text to stand out */
-    font-weight: bold;
-    text-decoration: none;
-    border: 2px solid #ffe500;           /* Outline button style */
-    border-radius: 4px;                  /* Slightly rounded corners */
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: all 0.3s ease-in-out;    /* Smooth transition for hover effects */
-    box-shadow: 0 0 10px rgba(255, 229, 0, 0.3); /* Subtle glow effect */
+.event-row:hover .event-details h2 {
+  color: #ffe500;
 }
 
-/* Hover Effect - Solid Yellow */
-.btn-tickets:hover {
-    background-color: #ffe500;           /* Solid yellow background */
-    color: #1f1f1f;                      /* Dark text for contrast */
-    border-color: #ffe500;               /* Border matches background */
-    box-shadow: 0 0 20px rgba(255, 229, 0, 0.6); /* Stronger yellow glow on hover */
-    transform: scale(1.05);             /* Slight zoom-in effect */
+.event-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-
-
-/* ===== Responsive Tweaks (Optional) ===== */
-@media (max-width: 480px) {
-    .events-container h2 {
-        font-size: 2em;
-    }
-
-    .event-details h3 {
-        font-size: 1.3em;
-    }
+.event-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #9ca3af;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
+.event-meta svg {
+  width: 14px;
+  height: 14px;
+  color: #ffe500;
+  flex: 0 0 auto;
+}
 
-/* Footer Section */
-.site-footer {
-    background-color: #222;
-    padding: 20px 0;
-    text-align: center;
+.event-action {
+  width: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.event-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 10rem;
+  padding: 0.75rem 2rem;
+  border: 2px solid #ffe500;
+  background: transparent;
+  color: #ffe500;
+  font-family: "Teko", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  transition: background-color 300ms ease, color 300ms ease, transform 300ms ease;
+}
+
+.event-button:hover {
+  background: #ffe500;
+  color: #000000;
+  transform: translateY(-0.2rem);
+}
+
+.events-booking {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.events-booking a {
+  color: #ffe500;
+  font-family: "Teko", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.5rem;
+  transition: color 220ms ease;
+}
+
+.events-booking a:hover {
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .events-heading h1 {
+    font-size: 96px;
+  }
+}
+
+@media (max-width: 900px) {
+  .event-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .event-main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .event-action {
     width: 100%;
+  }
+
+  .event-button {
+    width: 100%;
+  }
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; /* Allows wrapping for smaller screens */
-    padding-bottom: 20px;
-}
+@media (max-width: 700px) {
+  .events-page {
+    padding-top: 4.75rem;
+  }
 
-.footer-column {
-    background-color: #222;
-    padding: 10px;
-    min-width: 200px; /* Ensures columns stay readable on small screens */
-    text-align: center;
-}
+  .events-section {
+    padding: 4.5rem 0 5rem;
+  }
 
-.footer-column h4 {
-    color: #ffffff;
-    font-family: 'Digitalt', sans-serif;
-    letter-spacing: 3px;
-    font-size: 1.5em;
-    font-weight: 200;
-    margin-bottom: 10px;
-}
+  .events-heading {
+    margin-bottom: 3rem;
+    padding-left: 1rem;
+  }
 
-.footer-column ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+  .events-heading h1 {
+    font-size: 60px;
+  }
 
-.footer-column li {
-    margin-bottom: 5px;
-}
+  .event-row {
+    padding: 1.25rem;
+    margin-inline: 0;
+  }
 
-.footer-column a {
-    color: #ffe500;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
+  .event-date-main {
+    font-size: 32px;
+    line-height: 36px;
+  }
 
-.footer-column a:hover {
-    text-decoration: underline;
-    color: #ffffff;
-}
+  .event-details h2 {
+    font-size: 28px;
+    line-height: 32px;
+  }
 
-.footer-bottom {
-    background-color: #1f1f1f;
-    padding: 15px 0;
-    text-align: center;
-    font-size: 0.9em;
-    color: #ffffff;
-    border-top: 1px solid #333;
-}
-
-.footer-bottom p {
-    margin-bottom: 5px;
-    margin-top: 0;
-    line-height: 1.2;
-}
-
-.footer-bottom a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.footer-bottom a:hover {
-    text-decoration: none;
-    color: #ffe500;
-}
-
-/* Responsive Footer for Tablets */
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-    }
-
-    .footer-column {
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    .footer-bottom {
-        padding: 10px 0;
-    }
-}
-
-/* Responsive Footer for Mobile */
-@media (max-width: 480px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-    }
-
-    .footer-column {
-        width: 100%;
-        margin-bottom: 15px;
-    }
-
-    .footer-bottom {
-        padding: 8px 0;
-        font-size: 0.8em;
-    }
-}
-
-
-/* Media Queries */
-@media (min-width: 1024px) and (max-width: 1366px) {
-    .hero-content .main-heading {
-        width: 70%;
-        max-width: 350px;
-    }
-
-    section {
-        padding: 40px 20px; /* Adjust for larger screens */
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-section {
-        height: 60vh;
-    }
-
-    .hero-content .main-heading {
-        max-width: 250px;
-    }
-
-    section {
-        padding: 20px 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-section {
-        height: 50vh;
-    }
-
-    .hero-content .main-heading {
-        max-width: 200px;
-    }
-
-    section {
-        padding: 10px;
-    }
-
-    .hero-content h1 {
-        font-size: 4em;      /* Further reduce size */
-        letter-spacing: 2px;
-}
+  .events-stage-glow {
+    width: 18rem;
+    height: 18rem;
+  }
 }

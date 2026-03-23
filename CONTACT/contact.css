@@ -1,539 +1,356 @@
-/* ===================================
-   1. CUSTOM FONT FACE (UNCHANGED)
-=================================== */
-@font-face { 
-    font-family: 'Digitalt';
-    src: url('../Fonts/digitalt-font/Digitalt-04no.ttf') format('truetype'),
-         url('../Fonts/digitalt-font/Digitalt-nGZM.otf') format('opentype'); /* Adjusted path */
-    font-weight: normal;
-    font-style: normal;
+.contact-page {
+  min-height: 100vh;
+  padding-top: 8rem;
+  padding-bottom: 6rem;
+  background: #050505;
+  color: #ffffff;
 }
 
-/* ===================================
-   2. RESET STYLES (UNCHANGED)
-=================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.contact-section {
+  position: relative;
+  overflow: hidden;
 }
 
-/* ===================================
-   3. BASE BODY STYLES (UNCHANGED)
-=================================== */
-body {
-    font-family: Helvetica, sans-serif;
-    background-color: #1f1f1f;
-    color: #fff;
+.contact-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 
-/* ===================================
-   4. NAVIGATION BAR (UNCHANGED)
-=================================== */
-.navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
+.contact-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.12;
+  filter: grayscale(1);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.contact-background-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #050505, transparent 28%, #050505);
+  pointer-events: none;
+}
+
+.contact-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-intro {
+  margin-bottom: 4rem;
+}
+
+.contact-intro h1 {
+  margin: 0 0 1rem;
+  color: #ffe500;
+  font-family: "Teko", sans-serif;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+.contact-intro p {
+  max-width: 42rem;
+  margin: 0;
+  color: #9ca3af;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 4rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-panel,
+.contact-form-wrap {
+  position: relative;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.contact-panel-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.5rem;
+  height: 100%;
+  background: #ffe500;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 300ms ease;
+}
+
+.contact-panel:hover .contact-panel-accent {
+  transform: scaleY(1);
+}
+
+.contact-panel h2 {
+  margin: 0 0 1.5rem;
+  color: #ffffff;
+  font-family: "Teko", sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #d1d5db;
+  transition: color 220ms ease;
+}
+
+.contact-item:hover {
+  color: #ffe500;
+}
+
+.contact-icon {
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: border-color 220ms ease;
+}
+
+.contact-item:hover .contact-icon {
+  border-color: #ffe500;
+}
+
+.contact-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.contact-label {
+  color: #6b7280;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contact-value {
+  color: #d1d5db;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.contact-socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.contact-socials a {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease, color 220ms ease;
+}
+
+.contact-socials a:hover {
+  transform: translateY(-0.25rem);
+  border-color: #ffe500;
+  background: #ffe500;
+  color: #000000;
+}
+
+.contact-socials svg {
+  width: 24px;
+  height: 24px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field span {
+  color: #9ca3af;
+  font-family: "Teko", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0;
+  padding: 0.9rem 0;
+  background: transparent;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: normal;
+  text-transform: none;
+  transition: border-color 220ms ease;
+}
+
+.field select {
+  padding-inline: 0;
+  background: #0a0a0a;
+  cursor: pointer;
+}
+
+.field textarea {
+  min-height: 10rem;
+  resize: vertical;
+  padding: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #374151;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: #ffe500;
+}
+
+.contact-submit {
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  align-self: flex-start;
+  padding: 1rem 2rem;
+  border: 0;
+  background: #ffe500;
+  color: #000000;
+  font-family: "Teko", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: transform 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+}
+
+.contact-submit:hover {
+  transform: translateY(-0.25rem);
+  background: #ffffff;
+  box-shadow: 0 0 20px rgba(255, 229, 0, 0.4);
+}
+
+.contact-submit svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (min-width: 768px) {
+  .contact-intro h1 {
+    font-size: 96px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .contact-page {
+    padding-top: 6.5rem;
+    padding-bottom: 5rem;
+  }
+
+  .contact-intro h1 {
+    font-size: 60px;
+  }
+
+  .contact-intro p {
+    font-size: 18px;
+  }
+
+  .contact-panel,
+  .contact-form-wrap {
+    padding: 1.5rem;
+  }
+
+  .contact-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-submit {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    z-index: 10;
-    transition: top 0.3s;
-}
-
-.navbar .logo img {
-    width: 50px;
-    height: auto;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-    margin-left: 800px;
-    margin-right: 0;
-}
-
-.nav-links li {
-    display: inline;
-}
-
-.nav-links a {
-    color: #ffe500;
-    font-family: "Lacquer", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    text-decoration: none;
-    font-size: 1.5em;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.nav-links a:hover {
-    color: #ffe60085;
-    text-decoration: none;
-}
-
-/* Mobile Menu Button (Hamburger Icon) */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.menu-toggle span {
-    background-color: #ffe500; /* Line color */
-    height: 3px;               /* Line thickness */
-    width: 30px;               /* Line width */
-    margin: 3px 0;             /* Space between lines */
-    border-radius: 5px;        /* Rounded corners */
-    transition: all 0.3s ease; /* Smooth animation */
-}
-
-/* Navbar Links (Default) */
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-}
-
-.nav-links a {
-    color: #ffe500;
-    text-decoration: none;
-    font-size: 1.5em;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.nav-links a:hover {
-    color: #ffe60085;
-}
-
-/* Mobile Menu (Dropdown) */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: flex; /* Show menu button on small screens */
-    }
-
-    .nav-links {
-        display: none; /* Hide links by default */
-        flex-direction: column;
-        position: absolute;
-        top: 65px; /* Positioned below the toggle icon */
-        right: 20px;
-        background-color: rgba(31, 31, 31, 0.9); /* Slight transparency */
-        padding: 10px 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        z-index: 999;
-    }
-
-    .nav-links.active {
-        display: flex; /* Show dropdown when active */
-    }
-
-    .nav-links a {
-        padding: 10px;
-        text-align: right;
-        width: 100%;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .nav-links a:last-child {
-        border-bottom: none;
-    }
-
-    /* Animation for the hamburger icon when opened */
-    .menu-toggle.open span:nth-child(1) {
-        transform: rotate(45deg);
-        margin-top: 8px;
-    }
-
-    .menu-toggle.open span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle.open span:nth-child(3) {
-        transform: rotate(-45deg);
-        margin-top: 8px;
-    }
-}
-
-/* ===================================
-   5. HERO SECTION (UNCHANGED)
-=================================== */
-.hero-section {
-    background: linear-gradient(
-        rgba(0, 0, 0, 0) 70%,
-        #1f1f1f 100%
-    ), url('../Resources/Screenshot (9).png') center center/cover;
-    height: 80vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-}
-
-.hero-content .main-heading {
-    width: 80%;
-    height: auto;
-    max-width: 400px;
-    position: relative;
-    z-index: 2;
-    filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.9));
-}
-
-@keyframes rotateScale {
-    0% {
-        transform: rotate(-30deg) scale(0.5);
-        opacity: 0;
-    }
-    50% {
-        transform: rotate(0deg) scale(1.1);
-        opacity: 1;
-    }
-    100% {
-        transform: rotate(0deg) scale(1);
-        opacity: 1;
-    }
-}
-
-.hero-content h1 {
-    font-family: "Lacquer", system-ui;
-    color: #ffe500;
-    font-size: 5em;
-    letter-spacing: 10px;
-    margin-bottom: 20px;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
-    position: relative;
-    z-index: 2;
-    animation: rotateScale 2s ease-out;
-}
-
-.about {
-    color: #ffffff; 
-}
-
-.us {
-    color: #ffe500; 
-}
-
-
-/* ===================================
-   6. SECTION STYLES (UNCHANGED)
-=================================== */
-section {
-    padding: 20px 20px;
-    text-align: center;
-}
-
-section h2 {
-    font-family: 'Digitalt', sans-serif;
-    letter-spacing: 5px;
-    font-size: 3em;
-    margin-bottom: 20px;
-    font-weight: 200;
-    font-style: normal;
-}
-
-/* ===================================
-   7. BAND MEMBERS (UNCHANGED)
-=================================== */
-.band-member {
-    margin-bottom: 20px;
-    background: linear-gradient(to right, #1f1f1f, #333);
-    padding: 20px;
-    color: #fff;
-}
-
-.band-member img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-}
-
-/* ===================================
-   8. PARAGRAPH STYLES (UNCHANGED)
-=================================== */
-p {
-    margin-top: 20px;
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-
-/* Footer Section */
-.site-footer {
-    background-color: #222;
-    padding: 20px 0;
-    text-align: center;
-    width: 100%;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; /* Allows wrapping for smaller screens */
-    padding-bottom: 20px;
-}
-
-.footer-column {
-    background-color: #222;
-    padding: 10px;
-    min-width: 200px; /* Ensures columns stay readable on small screens */
-    text-align: center;
-}
-
-.footer-column h4 {
-    color: #ffffff;
-    font-family: 'Digitalt', sans-serif;
-    letter-spacing: 3px;
-    font-size: 1.5em;
-    font-weight: 200;
-    margin-bottom: 10px;
-}
-
-.footer-column ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-column li {
-    margin-bottom: 5px;
-}
-
-.footer-column a {
-    color: #ffe500;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.footer-column a:hover {
-    text-decoration: underline;
-    color: #ffffff;
-}
-
-.footer-bottom {
-    background-color: #1f1f1f;
-    padding: 15px 0;
-    text-align: center;
-    font-size: 0.9em;
-    color: #ffffff;
-    border-top: 1px solid #333;
-}
-
-.footer-bottom p {
-    margin-bottom: 5px;
-    margin-top: 0;
-    line-height: 1.2;
-}
-
-.footer-bottom a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.footer-bottom a:hover {
-    text-decoration: none;
-    color: #ffe500;
-}
-
-/* Responsive Footer for Tablets */
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-    }
-
-    .footer-column {
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    .footer-bottom {
-        padding: 10px 0;
-    }
-}
-
-/* Responsive Footer for Mobile */
-@media (max-width: 480px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-    }
-
-    .footer-column {
-        width: 100%;
-        margin-bottom: 15px;
-    }
-
-    .footer-bottom {
-        padding: 8px 0;
-        font-size: 0.8em;
-    }
-}
-
-/* ===================================
-   10. MEDIA QUERIES (UNCHANGED)
-=================================== */
-@media (min-width: 1024px) and (max-width: 1366px) {
-    .hero-content .main-heading {
-        width: 70%;
-        max-width: 350px;
-    }
-    section {
-        padding: 40px 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-section {
-        height: 60vh;
-    }
-    .hero-content .main-heading {
-        max-width: 250px;
-    }
-    section {
-        padding: 20px 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-section {
-        height: 50vh;
-    }
-    .hero-content .main-heading {
-        max-width: 200px;
-    }
-    section {
-        padding: 10px;
-    }
-
-    .hero-content h1 {
-        font-size: 3em;      /* Further reduce size */
-        letter-spacing: 2px;
-}
-}
-/* ===================================
-   CONTACT DETAILS SECTION
-   (Image on the Left, Cards Stacked on the Right)
-=================================== */
-
-/* Wrapper for the entire contact details section */
-.contact-details-section {
-    padding: 40px 20px;
-    text-align: center;
-    background-color: #1f1f1f; /* Matches site background */
-}
-
-/* CONTACT */
-.heading-contact {
-    font-family: "Lacquer", system-ui;   /* Playful font */
-    font-size: 2.2em;                    /* Smaller size */
-    color: #ffe500;                      /* Yellow */
-    letter-spacing: 2px;
-    margin-bottom: 0.2em;
-}
-
-/* DETAILS */
-.heading-details {
-    font-family: 'Digitalt', sans-serif; /* Bold digital font */
-    font-size: 3em;                      /* Larger size */
-    color: #ffffff;                      /* White */
-    letter-spacing: 3px;
-    margin-top: 0;
-    margin-bottom: 1em;
-}
-.contact-details-section p {
-    max-width: 600px;
-    margin: 0 auto 30px auto;
-    line-height: 1.6;
-    font-size: 1.1rem;
-    color: #fff;
-}
-
-/* 
-   1. A flex container for the image (left) + cards (right).
-   2. We'll align items at the top (flex-start).
-   3. We add gap for spacing.
-*/
-.contact-content-wrapper {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 20px;
-    max-width: 1200px; 
-    margin: 0 auto;
-}
-
-/* The left side: Image container */
-.contact-image img {
-    max-width: 43vw;  /* Adjust as desired */
-    width: 100%;
-    height: auto;
-}
-
-/* The right side: a vertical column for the cards */
-.contact-cards-column {
-    display: flex;
-    flex-direction: column;  /* Stack them vertically */
-    gap: 20px;               /* Spacing between cards */
-    flex: 1;                 /* Take up remaining horizontal space */
-    max-width: 400px;        /* Optional: limit card container width */
-}
-
-/* Reuse your existing card styles */
-.contact-card {
-    background-color: #2c2c2c;
-    border-radius: 8px;
-    padding: 30px 20px;
-    text-align: center;
-    transition: background-color 0.3s;
-}
-
-.contact-card:hover {
-    background-color: #333;
-}
-
-.contact-card h3 {
-    font-size: 1.5em;
-    font-family: "Lacquer", system-ui;
-    margin-bottom: 15px;
-    color: #ffe500; /* Accent color */
-}
-
-.contact-card p {
-    color: #fff;
-    margin-bottom: 0;
-}
-
-/* Example media query to stack image above cards on narrow screens */
-@media (max-width: 768px) {
-    .contact-content-wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
-    .contact-image img {
-        max-width: 80%; /* Let the image shrink more on small screens */
-        margin-bottom: 20px;
-    }
+  }
 }

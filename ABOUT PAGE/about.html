@@ -1,178 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - The World Can Wait</title>
-    <link rel="stylesheet" href="../ABOUT PAGE/about.css"> <!-- Updated path -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="16x16" href="../Resources/favicon.png"> <!-- Updated path -->
-    <script src="../script.js" defer></script> <!-- Updated path -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | The World Can Wait</title>
+  <meta name="description" content="Read the story behind The World Can Wait and meet the band.">
+  <link rel="icon" type="image/png" href="../Resources/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="about.css">
+  <script src="../script.js" defer></script>
+  <script src="about.js" defer></script>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="../index.html">
-        <img src="../Resources/150x150 smiley skull new.png" src="" alt="Logo" class="logo" style="width: 50px; height: auto;">
-    </a>
-    <ul class="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="../EVENTS/events.html">Events</a></li>
-        <li><a href="../VIDEOS/videos.html">Videos</a></li>
-        <li><a href="../CONTACT/contact.html">Contact</a></li>
-    </ul>
-    <div class="menu-toggle" onclick="toggleMenu()">
+  <nav class="site-nav" data-nav>
+    <div class="nav-shell">
+      <a class="brand" href="../index.html" aria-label="The World Can Wait home">
+        <img src="../Resources/150x150 smiley skull new.png" alt="The World Can Wait logo">
+      </a>
+      <div class="nav-links" data-nav-links>
+        <a href="about.html">About</a>
+        <a href="../EVENTS/events.html">Events</a>
+        <a href="../CONTACT/contact.html">Contact</a>
+        <a class="nav-cta" href="../index.html#platforms">Listen Now</a>
+      </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+        <span class="sr-only">Toggle navigation</span>
         <span></span>
         <span></span>
         <span></span>
+      </button>
     </div>
-</nav>
-    <header class="navbar">
-        <!-- Navigation bar content -->
-    </header>
-    
-    <section class="hero-section">
-    
-        <div class="hero-content">
-        
-            <h1><span class="about">ABOUT</span>
-                <span class="us">US</span></h1>
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+      <a href="about.html">About</a>
+      <a href="../EVENTS/events.html">Events</a>
+      <a href="../CONTACT/contact.html">Contact</a>
+      <a class="mobile-menu-cta" href="../index.html#platforms">Listen Now</a>
+    </div>
+  </nav>
+
+  <main class="about-page">
+    <section class="about-story noise-surface">
+      <div class="section-shell narrow">
+        <div class="about-heading reveal">
+          <h1>About</h1>
         </div>
-    </section>
-    
-    <section>
-        <h2 class="heading-about">ABOUT</h2>
-        <h3 class="heading-twcw">THE WORLD CAN WAIT</h3>
-        <p>In July 2022, Rene phoned Anesh about forming a new band, an idea 
-born after Rene and George ended their previous group in the gloomy 
-COVID era. Chris, recently relocated from Cape Town, was also up for 
-something fresh. Within days, the four were jamming: Anesh on bass 
-(though that wouldn’t last), Chris on drums, George on guitar, and 
-Rene on vocals/guitar.</p>
-<p>They soon realized they needed a dedicated bassist—and female vocals. 
-    By luck, Rene had already connected with Jacky, who joined right away. 
-    The search for a bassist took longer. Eventually, Rene found Morne through 
-    a local sound guy in Swakopmund.</p>
 
-<p>The group decided to focus on covers for fun, 
-    having all been in various bands before. Choosing 
-    a band name wasn’t easy, but “The World Can Wait” stuck. 
-    Their first show was at SKW in August 2023, and more gigs have followed. 
-    They’re printing shirts, building their online presence, 
-    and planning to record original tracks soon. Stay tuned!</p>
-
-        
-        <p>Stay tuned!</p>
-        </p>
+        <div class="about-copy">
+          <p class="reveal">In <span>July 2022</span>, Rene phoned Anesh about forming a new band, an idea born after Rene and George ended their previous group in the gloomy COVID era. Chris, recently relocated from Cape Town, was also up for something fresh. Within days, the four were jamming: Anesh on bass, Chris on drums, George on guitar, and Rene on vocals and guitar.</p>
+          <p class="reveal">They soon realized they needed a dedicated bassist and female vocals. By luck, Rene had already connected with <span>Jacky</span>, who joined right away. The search for a bassist took longer. Eventually, Rene found <span>Morne</span> through a local sound guy in Swakopmund.</p>
+          <p class="reveal">The group decided to focus on covers for fun, having all been in various bands before. Choosing a band name was not easy, but <span class="lined">"The World Can Wait"</span> stuck. Their first show was at SKW in August 2023, and more gigs have followed. They are printing shirts, building their online presence, and planning to record original tracks soon.</p>
+          <p class="about-signoff reveal">Stay tuned.</p>
+        </div>
+      </div>
+      <div class="about-glow" aria-hidden="true"></div>
     </section>
-    <hr>
-    <section class="band-members">
-        <!-- Member 1 -->
-        <div class="member member-left">
-          <h2 class="member-name">JACKY</h2>
-          <img src="../Resources/Jacky2.jpg" alt="Jacky Smith">
-          <div class="member-info">
-            <p>Vocals</p>
-            <p>Years Active: 2022 - Present</p>
-            <p>Bio: Jacky brings a powerful presence as the band’s lead female vocalist.</p>
+
+    <section class="band-section">
+      <div class="section-shell wide">
+        <div class="band-heading reveal">
+          <h2>The Band</h2>
+        </div>
+
+        <div class="band-grid">
+          <article class="band-card reveal">
+            <div class="band-card-frame">
+              <img src="../Resources/Jacky2.jpg" alt="Jacky Smith">
+              <div class="band-card-overlay"></div>
+              <div class="band-card-copy">
+                <h3>Jacky</h3>
+                <div class="band-card-line"></div>
+                <p class="band-role">Jacky Smith - Vocals</p>
+                <p class="band-bio">Jacky brings a powerful presence as the band's lead female vocalist.</p>
+              </div>
+            </div>
+            <div class="band-card-accent"></div>
+          </article>
+
+          <article class="band-card reveal">
+            <div class="band-card-frame">
+              <img src="../Resources/rene4.JPG" alt="Rene Traut">
+              <div class="band-card-overlay"></div>
+              <div class="band-card-copy">
+                <h3>Rene</h3>
+                <div class="band-card-line"></div>
+                <p class="band-role">Rene Traut - Vocals and Guitar</p>
+                <p class="band-bio">Rene drives the band's sound with his emotive vocals and versatile guitar work.</p>
+              </div>
+            </div>
+            <div class="band-card-accent"></div>
+          </article>
+
+          <article class="band-card reveal">
+            <div class="band-card-frame">
+              <img src="../Resources/georg.JPG" alt="Georg Stadtherr">
+              <div class="band-card-overlay"></div>
+              <div class="band-card-copy">
+                <h3>Georg</h3>
+                <div class="band-card-line"></div>
+                <p class="band-role">Georg Stadtherr - Guitar</p>
+                <p class="band-bio">Georg shapes the band's melody with his expressive guitar riffs.</p>
+              </div>
+            </div>
+            <div class="band-card-accent"></div>
+          </article>
+
+          <article class="band-card reveal">
+            <div class="band-card-frame">
+              <img src="../Resources/morne1.JPG" alt="Morne Pretorius">
+              <div class="band-card-overlay"></div>
+              <div class="band-card-copy">
+                <h3>Morne</h3>
+                <div class="band-card-line"></div>
+                <p class="band-role">Morne Pretorius - Bass</p>
+                <p class="band-bio">Morne anchors the group's rhythm section with deep, steady bass lines.</p>
+              </div>
+            </div>
+            <div class="band-card-accent"></div>
+          </article>
+
+          <article class="band-card reveal">
+            <div class="band-card-frame">
+              <img src="../Resources/anesh3.JPG" alt="Anesh Morar">
+              <div class="band-card-overlay"></div>
+              <div class="band-card-copy">
+                <h3>Anesh</h3>
+                <div class="band-card-line"></div>
+                <p class="band-role">Anesh Morar - Drums, Keyboard, Vocals</p>
+                <p class="band-bio">Anesh adds a dynamic edge, switching seamlessly between instruments.</p>
+              </div>
+            </div>
+            <div class="band-card-accent"></div>
+          </article>
+
+          <article class="band-card reveal">
+            <div class="band-card-frame">
+              <img src="../Resources/chris1small.jpeg" alt="Chris De Chavonnes Vrug">
+              <div class="band-card-overlay"></div>
+              <div class="band-card-copy">
+                <h3>Chris</h3>
+                <div class="band-card-line"></div>
+                <p class="band-role">Chris De Chavonnes Vrug - Drums, Guitar, Vocals</p>
+                <p class="band-bio">Chris delivers versatility across instruments, rounding out the band's sound.</p>
+              </div>
+            </div>
+            <div class="band-card-accent"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-shell">
+      <div class="footer-grid">
+        <div class="footer-brand reveal">
+          <img src="../Resources/150x150 smiley skull new.png" alt="The World Can Wait logo">
+          <div>
+            <h3>The World Can Wait</h3>
+            <p>Raw Namibian Punk Rock</p>
           </div>
         </div>
-      
-        <!-- Member 2 -->
-        <div class="member member-right">
-          <h2 class="member-name">RENE</h2>
-          <img src="../Resources/rene4.JPG" alt="Rene Traut">
-          <div class="member-info">
-            <p>Vocals and Guitar</p>
-            <p>Years Active: 2022 - Present</p>
-            <p>Bio: Rene drives the band’s sound with his emotive vocals and versatile guitar work.</p>
+        <div class="footer-block reveal">
+          <h4>Hit Us Up</h4>
+          <a href="mailto:booking@theworldcanwait.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6h16v12H4z"></path><path d="m4 8 8 6 8-6"></path></svg>booking@theworldcanwait.com</a>
+          <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Windhoek, Namibia</p>
+        </div>
+        <div class="footer-block reveal">
+          <h4>The Network</h4>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/worldcwait/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg></a>
+            <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.8 8.2a2.8 2.8 0 0 0-2-2c-1.7-.4-7.8-.4-7.8-.4s-6.1 0-7.8.4a2.8 2.8 0 0 0-2 2C1.8 9.9 1.8 12 1.8 12s0 2.1.4 3.8a2.8 2.8 0 0 0 2 2c1.7.4 7.8.4 7.8.4s6.1 0 7.8-.4a2.8 2.8 0 0 0 2-2c.4-1.7.4-3.8.4-3.8s0-2.1-.4-3.8ZM10 15.4V8.6l5.6 3.4-5.6 3.4Z"></path></svg></a>
           </div>
+          <a class="footer-link" href="../CONTACT/contact.html">Open Contact Form</a>
         </div>
-
-        <!-- Member 3 -->
-        <div class="member member-left">
-            <h2 class="member-name">GEORG</h2>
-            <img src="../Resources/dad3.JPG" alt="Georg Stadtherr">
-            <div class="member-info">
-            <p>Instrument: Guitar</p>
-            <p>Years Active: 2022 - Present</p>
-            <p>Bio: Georg shapes the band’s melody with his expressive guitar riffs.</p>
-            </div>
-        </div>
-        
-        <!-- Member 4 -->
-        <div class="member member-right">
-            <h2 class="member-name">MORNE</h2>
-            <img src="../Resources/morne1.JPG" alt="Morne Pretorius">
-            <div class="member-info">
-            <p>Instrument: Bass</p>
-            <p>Years Active: 2022 - Present</p>
-            <p>Bio: Morne anchors the group’s rhythm section with deep, steady bass lines.</p>
-            </div>
-        </div>
-
-        <!-- Member 5 -->
-        <div class="member member-left">
-            <h2 class="member-name">ANESH</h2>
-            <img src="../Resources/anesh3.JPG" alt="Anesh Morar">
-            <div class="member-info">
-            <p>Instrument: Drums, Keyboard and Vocals</p>
-            <p>Years Active: 2022 - Present</p>
-            <p>Bio: Anesh adds a dynamic edge, switching seamlessly between drums, keyboard, and vocals.</p>
-            </div>
-        </div>
-        
-        <!-- Member 6 -->
-        <div class="member member-right">
-            <h2 class="member-name">CHRIS</h2>
-            <img src="../Resources/chris1small.jpeg" alt="Chris De Chavonnes Vrug">
-            <div class="member-info">
-            <p>Instrument: Drums, Guitar and Vocals</p>
-            <p>Years Active: 2022 - Present</p>
-            <p>Bio: Chris delivers versatility on drums, guitar, and vocals, rounding out the band’s sound.</p>
-            </div>
-        </div>
-      </section>
-      
-    
-    
-
-    <!-- <section>
-        <h2>Discography</h2>
-        <p>Notable albums and singles...</p>
-    </section> -->
-    
- <!-- Footer Section -->
- <footer class="site-footer">
-    <div class="footer-content">
-        <div class="footer-column">
-            <h4>Bookings</h4>
-            <p>Email: booking@theworldcanwait.com</p>
-        </div>
-        <div class="footer-column">
-            <h4>Instagram</h4>
-            <p>Latest Posts from @theworldcwait</p>
-        </div>
-        <div class="footer-column">
-            <h4>Upcoming Events</h4>
-            <ul>
-                <li>-</li>
-                <li>-</li>
-                <li>-</li>
-            </ul>
-        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-year></span> The World Can Wait. All rights reserved.</p>
+        <p>Built for the pit.</p>
+      </div>
     </div>
-    <div class="footer-bottom">
-        <p>&copy; 2024 The World Can Wait. All rights reserved.</p>
-        <p>Website built by <a href="https://papermooncreatives.com" target="_blank" rel="noopener">PAPERMOON Technical Creatives</a></p>
-    </div>
-</footer>
-
-
-</body>
-</html>
+  </footer>
 </body>
 </html>
