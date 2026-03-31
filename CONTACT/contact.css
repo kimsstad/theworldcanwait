@@ -136,6 +136,8 @@
 }
 
 .contact-icon {
+  
+  flex: 0 0 3rem;
   width: 3rem;
   height: 3rem;
   display: grid;
@@ -346,11 +348,43 @@
     padding: 1.5rem;
   }
 
+  .contact-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .contact-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-panel,
+  .contact-form-wrap {
+    width: min(100%, 21rem);
+    margin-inline: auto;
+  }
+
   .contact-row {
     grid-template-columns: 1fr;
   }
 
   .contact-submit {
     width: 100%;
+  }
+
+  /* Mobile-only fix for the booking email text wrapping cleanly */
+  .contact-item[href="mailto:booking@theworldcanwait.com"] .contact-value {
+    font-size: 1rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  /* Mobile-only fix for aligning the booking email icon to the top of its text block */
+  .contact-item[href="mailto:booking@theworldcanwait.com"] .contact-icon {
+    align-self: flex-start;
   }
 }
